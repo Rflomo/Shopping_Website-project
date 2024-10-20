@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Laptops - Tech Mart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Tech Mart</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Apple Laptops</h1>
+        <div class="row">
+            <!-- Product Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="apple_laptop_1.jpg" class="card-img-top" alt="Apple Laptop 1">
+                    <div class="card-body">
+                        <h5 class="card-title">MacBook Air (M1)</h5>
+                        <p class="card-text">Lightweight and powerful.</p>
+                        <p class="card-text"><strong>Price: $999</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('MacBook Air (M1)')">Add to Cart</button>
+                        <a href="product-detail.html?product=MacBook%20Air%20(M1)" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="apple_laptop_2.jpg" class="card-img-top" alt="Apple Laptop 2">
+                    <div class="card-body">
+                        <h5 class="card-title">MacBook Pro 13 (M2)</h5>
+                        <p class="card-text">Professional performance and portability.</p>
+                        <p class="card-text"><strong>Price: $1,299</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('MacBook Pro 13 (M2)')">Add to Cart</button>
+                        <a href="product-detail.html?product=MacBook%20Pro%2013%20(M2)" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="apple_laptop_3.jpg" class="card-img-top" alt="Apple Laptop 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MacBook Pro 16 (M1 Pro)</h5>
+                        <p class="card-text">For the most demanding professionals.</p>
+                        <p class="card-text"><strong>Price: $2,499</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('MacBook Pro 16 (M1 Pro)')">Add to Cart</button>
+                        <a href="product-detail.html?product=MacBook%20Pro%2016%20(M1%20Pro)" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function addToCart(productName) {
+            alert(productName + " has been added to your cart!");
+        }
+    </script>
+</body>
+</html>

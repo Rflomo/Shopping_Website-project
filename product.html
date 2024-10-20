@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tech Mart - Products</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Tech Mart</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin_login.html">Admin Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="customer_login.html">Customer Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="product_management.html">Product Management</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Available Products</h1>
+        <div class="row">
+            <!-- Product Card for Apple iMac 24 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="apple_desktop_1.jpg" class="card-img-top" alt="Apple iMac 24">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iMac 24-inch</h5>
+                        <p class="card-text">All-in-one desktop with stunning display.</p>
+                        <p class="card-text"><strong>Price: $1,299</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('Apple iMac 24-inch', 1299)">Add to Cart</button>
+                        <a href="product-detail.html?product=Apple%20iMac%2024-inch" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card for MacBook Pro 16 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="apple_laptop_3.jpg" class="card-img-top" alt="Apple Laptop 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MacBook Pro 16 (M1 Pro)</h5>
+                        <p class="card-text">For the most demanding professionals.</p>
+                        <p class="card-text"><strong>Price: $2,499</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('MacBook Pro 16 (M1 Pro)', 2499)">Add to Cart</button>
+                        <a href="product-detail.html?product=MacBook%20Pro%2016%20(M1%20Pro)" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card for Lenovo Yoga 9i -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="lenovo_laptop_2.jpg" class="card-img-top" alt="Lenovo Laptop 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Lenovo Yoga 9i</h5>
+                        <p class="card-text">Versatile 2-in-1 laptop with premium features.</p>
+                        <p class="card-text"><strong>Price: $1,199</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('Lenovo Yoga 9i', 1199)">Add to Cart</button>
+                        <a href="product-detail.html?product=Lenovo%20Yoga%209i" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Product Card for Samsung Galaxy Book Pro -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="samsung_laptop_1.jpg" class="card-img-top" alt="Samsung Laptop 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Samsung Galaxy Book Pro</h5>
+                        <p class="card-text">Sleek laptop with AMOLED display.</p>
+                        <p class="card-text"><strong>Price: $999</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('Samsung Galaxy Book Pro', 999)">Add to Cart</button>
+                        <a href="product-detail.html?product=Samsung%20Galaxy%20Book%20Pro" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card for HP Pavilion 15 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="hp_laptop_1.jpg" class="card-img-top" alt="HP Laptop 1">
+                    <div class="card-body">
+                        <h5 class="card-title">HP Pavilion 15</h5>
+                        <p class="card-text">Great performance and battery life.</p>
+                        <p class="card-text"><strong>Price: $749</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('HP Pavilion 15', 749)">Add to Cart</button>
+                        <a href="product-detail.html?product=HP%20Pavilion%2015" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card for HP Elite Desktop -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="hp_desktop_1.jpg" class="card-img-top" alt="HP Elite Desktop">
+                    <div class="card-body">
+                        <h5 class="card-title">HP Elite Desktop</h5>
+                        <p class="card-text">Versatile and powerful desktop for home and office.</p>
+                        <p class="card-text"><strong>Price: $999</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('HP Elite Desktop', 999)">Add to Cart</button>
+                        <a href="product-detail.html?product=HP%20Elite%20Desktop" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="validation.js"></script>
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Check if item already exists in the cart
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1; // Increase quantity if already in cart
+            } else {
+                cart.push({ name, price, quantity: 1 }); // Add new item to cart
+            }
+    
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart.`);
+        }
+    </script>
+</body>
+</html>

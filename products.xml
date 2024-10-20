@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>MacBook Pro</name>
+        <description>Apple M1 Chip, 16GB RAM, 512GB SSD</description>
+        <price>1300</price>
+        <category>Laptop</category>
+        <image>macbook.jpg</image>
+    </product>
+    <product>
+        <name>Dell XPS</name>
+        <description>Intel i7, 16GB RAM, 1TB SSD</description>
+        <price>1200</price>
+        <category>Laptop</category>
+        <image>dell.jpg</image>
+    </product>
+</products>

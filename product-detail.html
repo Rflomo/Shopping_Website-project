@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Tech Mart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        // Get URL query parameters
+        function getQueryParams(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+        // Display product details based on selection
+        function displayProductDetails() {
+            const productName = getQueryParams('product');
+
+            const products = {
+                // Dell Laptops and Desktops
+                'Dell Inspiron 15': {
+                    image: 'dell_laptop_1.jpg',
+                    price: '$799',
+                    description: 'Powerful performance for everyday tasks.',
+                    specs: ['Intel Core i5', '8GB RAM', '256GB SSD', '15.6" FHD'],
+                },
+                'Dell XPS 13': {
+                    image: 'dell_laptop_2.jpg',
+                    price: '$999',
+                    description: 'Ultra-thin and light, perfect for portability.',
+                    specs: ['Intel Core i7', '16GB RAM', '512GB SSD', '13.4" FHD'],
+                },
+                'Dell G5 Gaming Laptop': {
+                    image: 'laptop_3.jpg',
+                    price: '$1,299',
+                    description: 'High performance for gaming and multimedia.',
+                    specs: ['Intel Core i7', '16GB RAM', '1TB SSD', '15.6" FHD'],
+                },
+                'Dell OptiPlex 7090 Desktop': {
+                    image: 'dell_desktop_1.jpg',
+                    price: '$999',
+                    description: 'Compact and powerful desktop for business needs.',
+                    specs: ['Intel Core i7', '16GB RAM', '512GB SSD'],
+                },
+                'Dell XPS Desktop 8940': {
+                    image: 'desktop_2.jpg',
+                    price: '$1,199',
+                    description: 'High performance desktop with gaming capabilities.',
+                    specs: ['Intel Core i7', '16GB RAM', '1TB HDD', 'NVIDIA RTX 3060'],
+                },
+                'Dell G5 Gaming Desktop': {
+                    image: 'dell_desktop_3.jpg',
+                    price: '$1,499',
+                    description: 'Gaming desktop with cutting-edge graphics.',
+                    specs: ['Intel Core i7', '32GB RAM', '1TB SSD', 'NVIDIA RTX 3070'],
+                },
+                // HP Laptops and Desktops
+                'HP Pavilion 15': {
+                    image: 'hp_laptop_1.jpg',
+                    price: '$799',
+                    description: 'Great performance and battery life.',
+                    specs: ['AMD Ryzen 5', '8GB RAM', '512GB SSD'],
+                },
+                'HP Spectre x360': {
+                    image: 'hp_laptop_2.jpg',
+                    price: '$1,199',
+                    description: 'Premium convertible laptop for all-day productivity.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 1TB SSD',
+                        'Display: 13.3" 4K UHD',
+                    ],
+                },
+                'HP Omen Gaming Laptop': {
+                    image: 'hp_laptop_3.jpg',
+                    price: '$1,499',
+                    description: 'High-performance gaming laptop with stunning graphics.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 1TB SSD',
+                        'Display: 15.6" FHD',
+                    ],
+                },
+                'HP Elite Desktop': {
+                    image: 'hp_desktop_1.jpg',
+                    price: '$999',
+                    description: 'Business-grade desktop with reliability and performance.',
+                    specs: ['Intel Core i5', '16GB RAM', '1TB HDD'],
+                },
+                'HP All-in-One Desktop': {
+                    image: 'hp_desktop_2.jpg',
+                    price: '$1,199',
+                    description: 'Sleek all-in-one desktop for home and office.',
+                    specs: [
+                        'Processor: AMD Ryzen 5',
+                        'RAM: 16GB',
+                        'Storage: 512GB SSD',
+                        'Display: 23.8" FHD',
+                    ],
+                },
+                'HP ProDesk 400 G7': {
+                    image: 'hp_desktop_3.jpg',
+                    price: '$899',
+                    description: 'Reliable desktop for productivity and everyday tasks.',
+                    specs: [
+                        'Processor: Intel Core i5',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                    ],
+                },
+                // Apple Laptops and Desktops
+                'MacBook Air (M1)': {
+                    image: 'apple_laptop_1.jpg',
+                    price: '$999',
+                    description: 'Lightweight and powerful for everyday use.',
+                    specs: [
+                        'Processor: Apple M1 chip',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                        'Display: 13.3" Retina',
+                    ],
+                },
+                'MacBook Pro 13 (M2)': {
+                    image: 'apple_laptop_2.jpg',
+                    price: '$1,299',
+                    description: 'Professional performance and portability.',
+                    specs: [
+                        'Processor: Apple M1 Max chip',
+                        'RAM: 64GB',
+                        'Storage: 1TB SSD',
+                        'Display: 14.2" Liquid Retina XDR',
+                    ],
+                },
+                'MacBook Pro 16 (M1 Pro)': {
+                    image: 'apple_laptop_3.jpg',
+                    price: '$2,499',
+                    description: 'Powerhouse for graphics and gaming.',
+                    specs: [
+                        'Processor: Apple M1 Max chip',
+                        'RAM: 32GB',
+                        'Storage: 1TB SSD',
+                        'Display: 16.2" Liquid Retina XDR',
+                    ],
+                },
+                'Apple iMac 24-inch': {
+                    image: 'apple_desktop_1.jpg',
+                    price: '$1,299',
+                    description: 'All-in-one desktop with stunning 4.5K display.',
+                    specs: [
+                        'Processor: Apple M1 chip',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                        'Display: 24" 4.5K Retina',
+                    ],
+                },
+                'Apple Mac Mini': {
+                    image: 'apple_desktop_2.jpg',
+                    price: '$699',
+                    description: 'Compact desktop with powerful performance.',
+                    specs: [
+                        'Processor: Apple M1 chip',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                        'Ports: USB-C, HDMI, Ethernet',
+                    ],
+                },
+                'Apple Mac Pro': {
+                    image: 'apple_desktop_3.jpg',
+                    price: '$5,999',
+                    description: 'High-performance desktop for professionals.',
+                    specs: [
+                        'Processor: Intel Xeon W',
+                        'RAM: 32GB (configurable up to 1.5TB)',
+                        'Storage: 256GB SSD (configurable up to 8TB)',
+                        'Graphics: AMD Radeon Pro 580X',
+                    ],
+                },
+                 // Lenovo Laptops and Desktops
+                 'Lenovo ThinkPad X1 Carbon': {
+                    image: 'lenovo_laptop_1.jpg',
+                    price: '$1,499',
+                    description: 'Premium laptop with robust security features.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 512GB SSD',
+                        'Display: 14" FHD',
+                    ],
+                },
+                'Lenovo Legion 5': {
+                    image: 'lenovo_laptop_3.jpg',
+                    price: '$1,299',
+                    description: 'High-performance gaming laptop.',
+                    specs: [
+                        'Processor: AMD Ryzen 7',
+                        'RAM: 16GB',
+                        'Storage: 1TB SSD',
+                        'Display: 15.6" FHD',
+                    ],
+                },
+                'Lenovo Yoga 9i': {
+                    image: 'lenovo_laptop_2.jpg',
+                    price: '$1,199',
+                    description: 'Versatile 2-in-1 laptop with premium features.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 512GB SSD',
+                        'Display: 14" 4K UHD',
+                    ],
+                },
+                
+                'Lenovo ThinkCentre M90n': {
+                    image: 'lenovo_desktop_1.jpg',
+                    price: '$899',
+                    description: 'Compact desktop for business applications.',
+                    specs: [
+                        'Processor: Intel Core i5',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                    ],
+                },
+                'Lenovo Legion Tower 5i': {
+                    image: 'lenovo_desktop_2.jpg',
+                    price: '$1,199',
+                    description: 'Gaming desktop with powerful performance.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 1TB HDD',
+                        'Graphics: NVIDIA RTX 3060',
+                    ],
+                },
+                'Lenovo IdeaCentre AIO 3': {
+                    image: 'lenovo_desktop_3.jpg',
+                    price: '$999',
+                    description: 'All-in-one desktop with sleek design.',
+                    specs: [
+                        'Processor: AMD Ryzen 5',
+                        'RAM: 12GB',
+                        'Storage: 512GB SSD',
+                        'Display: 24" FHD',
+                    ],
+                },
+                // Samsung Laptops and Desktops
+                'Samsung Galaxy Book Pro': {
+                    image: 'samsung_laptop_1.jpg',
+                    price: '$999',
+                    description: 'Sleek laptop with AMOLED display.',
+                    specs: [
+                        'Processor: Intel Core i5',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                        'Display: 13.3" AMOLED',
+                    ],
+                },
+                'Samsung Notebook 9 Pro': {
+                    image: 'samsung_laptop_2.jpg',
+                    price: '$1,199',
+                    description: 'Convertible laptop with S Pen support.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 512GB SSD',
+                        'Display: 13.3" FHD',
+                    ],
+                },
+                'Samsung Galaxy Book 2': {
+                    image: 'samsung_laptop_3.jpg',
+                    price: '$899',
+                    description: 'Affordable and lightweight laptop for everyday tasks.',
+                    specs: [
+                        'Processor: Intel Core i5',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                        'Display: 15.6" FHD',
+                    ],
+                },
+                
+                'Samsung All-in-One Desktop': {
+                    image: 'samsung_desktop_1.jpg',
+                    price: '$1,199',
+                    description: 'Stylish all-in-one desktop for home use.',
+                    specs: [
+                        'Processor: Intel Core i7',
+                        'RAM: 16GB',
+                        'Storage: 1TB SSD',
+                        'Display: 27" FHD',
+                    ],
+                },
+                'Samsung Galaxy AIO': {
+                    image: 'samsung_desktop_2.jpg',
+                    price: '$1,299',
+                    description: 'Powerful all-in-one desktop with premium features.',
+                    specs: [
+                        'Processor: AMD Ryzen 7',
+                        'RAM: 16GB',
+                        'Storage: 512GB SSD',
+                        'Display: 32" UHD',
+                    ],
+                },
+                'Samsung Desktop PC': {
+                    image: 'samsung_desktop_3.jpg',
+                    price: '$899',
+                    description: 'Compact desktop for home and office tasks.',
+                    specs: [
+                        'Processor: Intel Core i5',
+                        'RAM: 8GB',
+                        'Storage: 256GB SSD',
+                    ],
+                },
+            };
+
+            
+
+            const product = products[productName];
+
+            if (product) {
+                // Set Laptop Details
+                document.getElementById('laptop-title').innerText = productName;
+                document.getElementById('laptop-image').src = product.image;
+                document.getElementById('laptop-price').innerText = `Price: ${product.price}`;
+                document.getElementById('laptop-description').innerText = product.description;
+
+                const laptopSpecsList = document.getElementById('laptop-specs');
+                laptopSpecsList.innerHTML = ''; // Clear previous specs
+                product.specs.forEach(spec => {
+                    const li = document.createElement('li');
+                    li.innerText = spec;
+                    laptopSpecsList.appendChild(li);
+                });
+
+                // Set Desktop Details if related product exists
+                const desktopName = getDesktopProductName(productName);
+                const desktopProduct = products[desktopName];
+
+                if (desktopProduct) {
+                    document.getElementById('desktop-title').innerText = desktopName;
+                    document.getElementById('desktop-image').src = desktopProduct.image;
+                    document.getElementById('desktop-price').innerText = `Price: ${desktopProduct.price}`;
+                    document.getElementById('desktop-description').innerText = desktopProduct.description;
+
+                    const desktopSpecsList = document.getElementById('desktop-specs');
+                    desktopSpecsList.innerHTML = ''; // Clear previous specs
+                    desktopProduct.specs.forEach(spec => {
+                        const li = document.createElement('li');
+                        li.innerText = spec;
+                        desktopSpecsList.appendChild(li);
+                    });
+                } else {
+                    document.getElementById('desktop-details').innerText = 'No matching desktop found.';
+                }
+            } else {
+                document.getElementById('product-details').innerText = 'Product not found.';
+            }
+        }
+
+        function getDesktopProductName(laptopName) {
+            const mapping = {
+                'Dell Inspiron 15': 'Dell OptiPlex 7090 Desktop',
+                'Dell XPS 13': 'Dell XPS Desktop 8940',
+                'Dell G5 Gaming Laptop': 'Dell G5 Gaming Desktop',
+                'HP Pavilion 15': 'HP Elite Desktop',
+                'HP Spectre x360': 'HP All-in-One Desktop',
+                'HP Omen Gaming Laptop': 'HP ProDesk 400 G7',
+                'MacBook Air (M1)': 'Apple iMac 24-inch',
+                'MacBook Pro 13 (M2)': 'Apple Mac Mini',
+                'MacBook Pro 16 (M1 Pro)': 'Apple Mac Pro',
+                'Lenovo ThinkPad X1 Carbon': 'Lenovo ThinkCentre M90n',
+                'Lenovo Legion 5': 'Lenovo Legion Tower 5i',
+                'Lenovo Yoga 9i': 'Lenovo IdeaCentre AIO 3',
+                'Samsung Galaxy Book Pro': 'Samsung All-in-One Desktop',
+                'Samsung Notebook 9 Pro': 'Samsung Galaxy AIO',
+                'Samsung Galaxy Book 2': 'Samsung Desktop PC',
+                'HP Elite Desktop': 'HP Pavilion 15',
+                'Dell XPS Desktop 8940': 'Dell XPS 13',
+                'Apple iMac 24-inch': 'MacBook Air (M1)',
+            };
+            return mapping[laptopName] || null;
+        }
+
+        function addToCart(productName) {
+            alert(`${productName} has been added to your cart!`);
+        }
+
+        window.onload = displayProductDetails;
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Tech Mart</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5" id="product-details">
+        <h1>Laptop Details</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img id="laptop-image" class="img-fluid" alt="Laptop Image">
+            </div>
+            <div class="col-md-6">
+                <h3 id="laptop-title"></h3>
+                <h4 id="laptop-price"></h4>
+                <p><strong>Description:</strong> <span id="laptop-description"></span></p>
+                <h4>Specifications:</h4>
+                <ul id="laptop-specs"></ul>
+                <button class="btn btn-success" onclick="addToCart(document.getElementById('laptop-title').innerText)">Add to Cart</button>
+            </div>
+        </div>
+
+        <h1 class="mt-5">Desktop Details</h1>
+        <div class="row" id="desktop-details">
+            <div class="col-md-6">
+                <img id="desktop-image" class="img-fluid" alt="Desktop Image">
+            </div>
+            <div class="col-md-6">
+                <h3 id="desktop-title"></h3>
+                <h4 id="desktop-price"></h4>
+                <p><strong>Description:</strong> <span id="desktop-description"></span></p>
+                <h4>Specifications:</h4>
+                <ul id="desktop-specs"></ul>
+                <button class="btn btn-success" onclick="addToCart(document.getElementById('desktop-title').innerText)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

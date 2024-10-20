@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Computers - Tech Mart</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Tech Mart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Desktop Computers</h1>
+        <div class="row">
+            <!-- Product Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="desktop_2.jpg" class="card-img-top" alt="Dell XPS Desktop 8940">
+                    <div class="card-body">
+                        <h5 class="card-title">Dell XPS Desktop 8940</h5>
+                        <p class="card-text">High performance desktop for gaming and work.</p>
+                        <p class="card-text"><strong>Price: $1,199</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('Dell XPS Desktop 8940')">Add to Cart</button>
+                        <a href="product-detail.html?product=Dell%20XPS%20Desktop%208940" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="hp_desktop_1.jpg" class="card-img-top" alt="HP Elite Desktop">
+                    <div class="card-body">
+                        <h5 class="card-title">HP Elite Desktop</h5>
+                        <p class="card-text">Versatile and powerful desktop for home and office.</p>
+                        <p class="card-text"><strong>Price: $999</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('HP Elite Desktop')">Add to Cart</button>
+                        <a href="product-detail.html?product=HP%20Elite%20Desktop" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="apple_desktop_1.jpg" class="card-img-top" alt="Apple iMac 24">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iMac 24-inch</h5>
+                        <p class="card-text">All-in-one desktop with stunning display.</p>
+                        <p class="card-text"><strong>Price: $1,299</strong></p>
+                        <button class="btn btn-success" onclick="addToCart('Apple iMac 24-inch')">Add to Cart</button>
+                        <a href="product-detail.html?product=Apple%20iMac%2024-inch" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function addToCart(productName) {
+            alert(productName + " has been added to your cart!");
+        }
+    </script>
+</body>
+</html>

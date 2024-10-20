@@ -1,0 +1,27 @@
+body {
+    padding-top: 20px;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+textarea {
+    resize: none; /* Prevent resizing of the textarea */
+}
+

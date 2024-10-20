@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>MacBook Pro</name>
+        <description>Apple M1 Chip, 16GB RAM, 512GB SSD</description>
+        <price>1300</price>
+        <category>Laptop</category>
+        <image>macbook.jpg</image>
+    </product>
+    <product>
+        <name>Dell XPS</name>
+        <description>Intel i7, 16GB RAM, 1TB SSD</description>
+        <price>1200</price>
+        <category>Laptop</category>
+        <image>dell.jpg</image>
+    </product>
+    <product>
+        <id>1</id>
+        <name>MacBook Pro</name>
+        <price>1299</price>
+        <description>The MacBook Pro is a line of high-performance laptops.</description>
+    </product>
+    <product>
+        <id>2</id>
+        <name>MacBook Air</name>
+        <price>999</price>
+        <description>The MacBook Air is a thin and light laptop.</description>
+    </product>
+</products>
